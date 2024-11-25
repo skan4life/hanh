@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHẠNH BANH ĐÙ</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      color: #ff69b4;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px red;
+      margin: 0;
+    }
+
+    .heart-container {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      animation: moveAround 7s infinite linear;
+    }
+
+    .heart {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(45deg, red, pink);
+      transform: rotate(-45deg);
+      animation: colorChange 3s infinite alternate;
+      clip-path: path("M150,0 C225,0 300,75 300,150 C300,225 225,300 150,300 C75,300 0,225 0,150 C0,75 75,0 150,0 Z");
+    }
+
+    .heart::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      animation: fireworks 1s infinite;
+    }
+
+    @keyframes moveAround {
+      0% {
+        top: 10%;
+        left: 10%;
+      }
+      25% {
+        top: 10%;
+        left: 70%;
+      }
+      50% {
+        top: 80%;
+        left: 70%;
+      }
+      75% {
+        top: 80%;
+        left: 10%;
+      }
+      100% {
+        top: 10%;
+        left: 10%;
+      }
+    }
+
+    @keyframes colorChange {
+      0% {
+        background: linear-gradient(45deg, red, pink);
+      }
+      50% {
+        background: linear-gradient(45deg, blue, purple);
+      }
+      100% {
+        background: linear-gradient(45deg, yellow, orange);
+      }
+    }
+
+    @keyframes fireworks {
+      0% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(2) translate(-50%, -50%);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(3) translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Anh Yêu Ngô Thị Hồng Hạnh</h1>
+  <div class="heart-container">
+    <div class="heart"></div>
+  </div>
+</body>
+</html>
